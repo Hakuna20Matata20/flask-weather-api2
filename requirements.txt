@@ -1,0 +1,2 @@
+Flask==2.3.3
+aws-lambda-wsgi==0.0.6

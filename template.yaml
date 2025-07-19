@@ -1,0 +1,25 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: Flask Weather API
+
+Resources:
+  WeatherApiFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: WeatherApiFunction
+      CodeUri: .
+      Handler: app.lambda_handler
+      Runtime: python3.11
+      Timeout: 10
+      MemorySize: 128
+      Events:
+        WeatherEndpoint:
+          Type: Api
+          Properties:
+            Path: /weather
+            Method: GET
+
+Outputs:
+  WeatherApiUrl:
+    Description: "Invoke URL for Weather API"
+    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/weather"
