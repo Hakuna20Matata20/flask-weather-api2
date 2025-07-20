@@ -2,8 +2,8 @@ version = 0.1
 
 [default.deploy.parameters]
 stack_name = "flask-weather-api-stack"
-s3_bucket = "flask-weather-api-bucket-ua2025"
-s3_prefix = "flask-weather-api"
+#s3_bucket = "flask-weather-api-bucket-ua2025"
+#s3_prefix = "flask-weather-api"
 region = "us-east-1"
 capabilities = "CAPABILITY_IAM"
 confirm_changeset = false
