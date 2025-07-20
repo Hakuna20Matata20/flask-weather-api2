@@ -3,7 +3,7 @@ Transform: AWS::Serverless-2016-10-31
 Description: Flask Weather API
 
 Resources:
-  FlaskWeatherFunction:               # Логічний ID ресурсу
+  FlaskWeatherFunction:
     Type: AWS::Serverless::Function
     Properties:
       FunctionName: FlaskWeatherFunction
@@ -19,7 +19,7 @@ Resources:
             Path: /weather
             Method: GET
 
-Outputs:                             # ← Ця секція має бути на одному рівні з Resources
+Outputs:
   WeatherApiUrl:
     Description: "Invoke URL for Weather API"
     Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/weather"
